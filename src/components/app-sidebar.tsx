@@ -1,20 +1,4 @@
 import * as React from "react"
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react"
-
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
 
 import {
   Sidebar,
@@ -24,135 +8,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 
-// This is sample data.
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
-  navMain: [
-    {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
-}
+
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const {toggleSidebar, open} = useSidebar()
@@ -172,19 +28,68 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
        <div className="flex items-center justify-center border-b-2 p-2.5" >
         {
           open ? (
-            <img src="./GWlogo.png" alt="Sidebar" className=""  />
+            <img src="./GWlogo.svg" alt="Sidebar" className=""  />
           ) : (
-            <img src="./logostick.png" alt="Sidebar" className="w-[46px] h-[54px]"  />
+            <img src="./logostick.svg" alt="Sidebar" className="w-[46px] h-[54px]"  />
           )
         }
        </div>
       </SidebarHeader>
+
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <div className="overflow-hidden">
+              {
+            open ? (
+              <div className="w-full flex items-center justify-center p-2.5 flex-col gap-2.5">
+                <div className="flex items-center justify-center p-2.5 gap-7">
+                <img src="./dashbicon.svg" alt="Sidebar" className="ml-6 w-[20px] h-[20px]" />
+                <p className="text-[17px]" style={{ fontFamily: "Inter, sans-serif" }}>Overview</p>
+                </div>
+                <p className="w-full ml-11">DAILY OPERATION</p>
+                <div className="w-full  flex items-start justify-start p-2.5 gap-7">
+                <img src="./reserv.svg" alt="Sidebar" className="ml-6 w-[20px] h-[20px]" />
+                <p className="text-[17px]" style={{ fontFamily: "Inter, sans-serif" }}>Reservations</p>
+                </div>
+                <div className="w-full  flex items-start justify-start p-2.5 gap-7">
+                <img src="./calendar.svg" alt="Sidebar" className="ml-6 w-[20px] h-[20px]" />
+                <p className="text-[17px]" style={{ fontFamily: "Inter, sans-serif" }}>Calendar</p>
+                </div>
+                <div className="w-full  flex items-start justify-start p-2.5 gap-7">
+                <img src="./ticket.svg" alt="Sidebar" className="ml-6 w-[20px] h-[20px]" />
+                <p className="text-[17px]" style={{ fontFamily: "Inter, sans-serif" }}>Ticket</p>
+                </div>
+                <div className="w-full  flex items-start justify-start p-2.5 gap-7">
+                <img src="./prime_user.svg" alt="Sidebar" className="ml-6 w-[20px] h-[20px]" />
+                <p className="text-[17px]" style={{ fontFamily: "Inter, sans-serif" }}>User</p>
+                </div>
+                <div className="w-full  flex items-start justify-start p-2.5 gap-7">
+                <img src="./log.svg" alt="Sidebar" className="ml-6 w-[20px] h-[20px]" />
+                <p className="text-[17px]" style={{ fontFamily: "Inter, sans-serif" }}>Log</p>
+                </div>
+                <p className="w-full ml-11">ACCOUNTING</p>
+                <div className="w-full  flex items-start justify-start p-2.5 gap-7">
+                <img src="./payment.svg" alt="Sidebar" className="ml-6 w-[20px] h-[20px]" />
+                <p className="text-[17px]" style={{ fontFamily: "Inter, sans-serif" }}>Payment</p>
+                </div>
+              </div>
+              
+            ) : (
+              <div className="w-full flex items-center justify-center p-2.5 flex-col gap-7">
+              <img src="./dashbicon.svg" alt="Sidebar" className="w-[24px] h-[24px]" />
+              <img src="./calendar.svg" alt="Sidebar" className="w-[24px] h-[24px]" /> 
+              <img src="./reserv.svg" alt="Sidebar" className="w-[24px] h-[24px]"/> 
+              <img src="./ticket.svg" alt="Sidebar" className="w-[26px] h-[26px]"/> 
+              <img src="./prime_user.svg" alt="Sidebar" className="w-[26px] h-[26px]"/> 
+              <img src="./log.svg" alt="Sidebar" className="w-[26px] h-[26px]"/> 
+              <img src="./payment.svg" alt="Sidebar" className="w-[26px] h-[26px]"/>
+              </div>
+
+            )
+            
+          }
+        </div>
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
   )
